@@ -1,6 +1,6 @@
 <?php
-require_once (__DIR__.'/src/crest.php');
 header("Content-Type: application/json;charset=utf-8");
+require_once (__DIR__.'/src/crest.php');
 
 function send2B24($answers, $phone) {
     $text = $answers;
