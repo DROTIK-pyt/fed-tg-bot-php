@@ -3,8 +3,14 @@ header("Content-Type: application/json;charset=utf-8");
 require_once (__DIR__.'/src/crest.php');
 
 function send2B24($answers, $phone) {
-    $text = $answers;
-    $text .= "\n";
+    $text = "";
+    foreach($answers as $answer) {
+        $text .= $answer["queston"];
+        $text .= "\n";
+        $text .= $answer["answer"];
+        $text .= "\n";
+    }
+
     $text .= "Телефон: $phone";
     $params = [
         "fields" => [
